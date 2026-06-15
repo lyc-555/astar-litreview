@@ -2,8 +2,6 @@
 
 **Code:** https://github.com/NVIDIA/physicsnemo/tree/main/examples/weather
 
-*Weight maps are not part of output. Can ask Claude to output for you.
-
 ***
 
 ### Scale / shift
