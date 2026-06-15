@@ -4,11 +4,11 @@
 → [https://github.com/spcl/smoe](https://github.com/spcl/smoe)  
 → 25 citations   
 —----------------—-------------—-------------—-------------—-------------—-------------—-----------  
-![](image1.png)
+<img src="image1.png" width="65%">
 
 <br>
 
-![](image3.jpeg)
+<img src="image3.jpeg" width="65%">
 
 
 <br />
