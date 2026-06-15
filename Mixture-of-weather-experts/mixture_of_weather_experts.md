@@ -4,7 +4,7 @@
 
 ***
 
-<img src="image1.png" width="350">
+![](image1.png)
 
 
 ### Scale / shift
