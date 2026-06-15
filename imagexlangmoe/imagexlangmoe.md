@@ -61,12 +61,14 @@ Latent space is n-dimensions, shared between all modalities. This means that enc
 <br>
 <br>
 <br>
+
 ## **ELBO Loss function:**  
 ![](image3.png)
 
 <br>
 <br>
 <br>
+
 ## **IWAE Loss (Upgrade)**
 
 ![](image9.png)
@@ -75,6 +77,7 @@ Each pass, K samples are taken from the blended cloud (Of all modalities), inste
 <br>
 <br>
 <br>
+
 ## **Looser MMVAE Objective (Upgrade)**
 
 ![](image10.png)
@@ -86,6 +89,7 @@ Each pass, K samples are taken from the blended cloud (Of all modalities), inste
 <br>
 <br>
 <br>
+
 ## Misc. Info
 **MNIST**: Didn't use CNN, only used FC  
 
