@@ -4,6 +4,9 @@
 
 ***
 
+![](image1.png)
+
+
 ### Scale / shift
 &gamma;, &beta; are learnable parameters.  
 &gamma; = Scaling factor (Default 1)  
@@ -19,11 +22,19 @@ Determines whether to trust attention output more, or Residue connection more.
 
 ***
 
+<br>
+
 ### Important components:
 
-#### 1: Objective of mixture of experts
+#### 1: Authors' Stated Objective of MOE
 Must outperform not just individual experts, but also a mean across experts.  
 
-#### 2: Gating mechanism  
+<br>
+<br>
+
+#### 2: Bias in Gating Mechanism 
+
+![](image2.png)
+
 Bias allows for model to correct any mistakes that all experts share.  
 If all individual weather models predict 0.5C higher for an area, b will be -0.5.
