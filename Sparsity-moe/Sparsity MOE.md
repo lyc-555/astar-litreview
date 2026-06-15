@@ -13,8 +13,13 @@
 <br>
 
 | **General Feature 1** | General Aim → To predict Spatial problems, such as weather forecasting. Input a grid, output a grid of exact same size.   |
-  <img src="image2.png" width="50%"> 
-  
+
+<br>
+
+<img src="image2.png" width="50%"> 
+
+<br>
+
 | **General Feature 2** | An **Expert is just a CNN 3x3 Conv slider**, with different weights in slide. 
 Each layer slides **all n Experts across entire grid** (Dense Experts). At each pixel, top K experts chosen ***If K\>1, each Expert maps to 1 channel.***“The outputs of each expert at a point are **concatenated**  to form the output channel dimension (of size E·F )”  → Activation Functions → Output  |
 | **General Feature 3** | 16GB V100 GPUs, 30k GPU hours total |
