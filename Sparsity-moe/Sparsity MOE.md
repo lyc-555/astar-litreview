@@ -12,10 +12,11 @@
 
 <br>
 
-| General Feature 1 | General Aim → To predict Spatial problems, such as weather forecasting. Input a grid, output a grid of exact same size.  !<img src="image2.jpeg" width="50%">  |
-| :---- | :---- |
+| **General Feature 1** | General Aim → To predict Spatial problems, such as weather forecasting. Input a grid, output a grid of exact same size.   |
+  <img src="image2.png" width="50%"> 
+  
 | **General Feature 2** | An **Expert is just a CNN 3x3 Conv slider**, with different weights in slide. 
-Each layer slides **all n Experts across entire grid** (Dense Experts). At each pixel, top K experts chosen ***If K\>1, each Expert maps to 1 channel.**“The outputs of each expert at a point are **concatenated**  to form the output channel dimension (of size E·F )” If K==5, channels \== 5*  → Activation Functions → Output  |
+Each layer slides **all n Experts across entire grid** (Dense Experts). At each pixel, top K experts chosen ***If K\>1, each Expert maps to 1 channel.***“The outputs of each expert at a point are **concatenated**  to form the output channel dimension (of size E·F )”  → Activation Functions → Output  |
 | **General Feature 3** | 16GB V100 GPUs, 30k GPU hours total |
 | **General Feature 4** | “We use a batch size of 64, the Adam optimizer with an initial learning rate of of 0.001, which we divide by a factor of 10 if the validation loss has not improved for two epochs to a minimum learning rate of 1e-6, and early stopping if the validation loss does not improve for five epochs” |
 |  |  |
