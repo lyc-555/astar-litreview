@@ -47,13 +47,13 @@ Input a grid, output a grid of exact same size (Dense Regression)
 ## General Feature 3
 
 16GB V100 GPUs, 30k GPU hours total  
-\*\*\*
+<br />
 
 ## General Feature 4
 
 “We use a batch size of 64, the Adam optimizer with an initial learning rate of of 0.001, which we divide by a factor of 10 if the validation loss has not improved for two epochs to a minimum learning rate of 1e-6, and early stopping if the validation loss does not improve for five epochs”  
 \*\*\*  
-**Gating Mechanism 1**
+## Gating Mechanism 1
 
 Gate is **not updated by Backprop** from MSE, instead from **RC Loss**
 
