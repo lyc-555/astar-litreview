@@ -78,7 +78,7 @@ Gate is **not updated by Backprop** from MSE, instead from **RC Loss**
 **k sparse probability vector** → Only k Experts are activated. `KeepTopK`  
 k=3 → *(0, .5, .4, .1, 0, 0, 0, 0\)* → All other 5 experts have weight \= 0  
    
-**What this means**: For each *downstream task (i.e. Predicting a certain property)*, only k Experts will ever be used. The rest are completely ignored  
+**What this means**: At each pixel, only `k` Experts will ever be used. The rest are completely ignored  
 
 <br />
 
