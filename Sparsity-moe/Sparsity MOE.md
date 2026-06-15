@@ -124,4 +124,4 @@ Experts updated by MSE, through **Backprop**.
 
 * Number of filters in replaced filter \= No. of Experts chosen (K). This ensures channel count at each layer remains the same. 
 
-* Routing between layers with same Expert count & output Channel count share the same routing weights
+* Routing between layers with same Expert count & output Channel count share the **same routing weights**
