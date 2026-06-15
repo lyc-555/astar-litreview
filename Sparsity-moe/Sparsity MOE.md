@@ -4,17 +4,21 @@
 → [https://github.com/spcl/smoe](https://github.com/spcl/smoe)  
 → 25 citations   
 —----------------—-------------—-------------—-------------—-------------—-------------—-----------  
-![](image1.png)
+<img src="image1.png" width="50%">
 
 <br>
 
-![](image3.png)
+<img src="image3.jpeg" width="50%">
 
 <br>
 
 | General Feature 1 | General Aim → To predict Spatial problems, such as weather forecasting Input a grid, output a grid of exact same size (Dense Regression)  ![](image2.png)  |
 | :---- | :---- |
-| **General Feature 2** | **How is Dense Regression carried out? ** An **Expert is just a CNN 3x3 Conv slider**, with different weights in slide. Each layer slides **all n Experts across entire grid** (Dense Experts).   *Pixel at position (2,2): The layer would slide all n 3x3 experts, where each experts looks at (1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1) , (3,2) , (3,3) If more than **1 channel**, each expert is applied across all channels, and sums across all channels, returning a **single number.** In paper, there is only 1 such Expert layer. Can add more if uw. Experts across layer are independent*  At each pixel, top K experts chosen ***If K\>1, each Expert maps to 1 channel.**“The outputs of each expert at a point are **concatenated** (Not added\!) to form the output channel dimension (of size E·F )” Multiple channels will be reduced by to **1 for each Expert**  in the next layer, as a convolution by each Expert at a 3x3 would **sum across all K channels** Hence, **number of channels always follows value of K.**   If K==5, channels \== 5*  → Activation Functions → Output  |
+| **General Feature 2** | An **Expert is just a CNN 3x3 Conv slider**, with different weights in slide. 
+
+<br>
+
+Each layer slides **all n Experts across entire grid** (Dense Experts).   *Pixel at position (2,2): The layer would slide all n 3x3 experts, where each experts looks at (1,1), (1,2), (1,3), (2,1), (2,2), (2,3), (3,1) , (3,2) , (3,3) If more than **1 channel**, each expert is applied across all channels, and sums across all channels, returning a **single number.** In paper, there is only 1 such Expert layer. Can add more if uw. Experts across layer are independent*  At each pixel, top K experts chosen ***If K\>1, each Expert maps to 1 channel.**“The outputs of each expert at a point are **concatenated** (Not added\!) to form the output channel dimension (of size E·F )” Multiple channels will be reduced by to **1 for each Expert**  in the next layer, as a convolution by each Expert at a 3x3 would **sum across all K channels** Hence, **number of channels always follows value of K.**   If K==5, channels \== 5*  → Activation Functions → Output  |
 | **General Feature 3** | 16GB V100 GPUs, 30k GPU hours total |
 | **General Feature 4** | “We use a batch size of 64, the Adam optimizer with an initial learning rate of of 0.001, which we divide by a factor of 10 if the validation loss has not improved for two epochs to a minimum learning rate of 1e-6, and early stopping if the validation loss does not improve for five epochs” |
 |  |  |
