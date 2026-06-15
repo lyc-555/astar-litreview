@@ -25,5 +25,5 @@ Determines whether to trust attention output more, or Residue connection more.
 Must outperform not just individual experts, but also a mean across experts.  
 
 #### 2: Gating mechanism  
-Bias allows for model to correct anu mistakes that all experts share.  
+Bias allows for model to correct any mistakes that all experts share.  
 If all individual weather models predict 0.5C higher for an area, b will be -0.5.
