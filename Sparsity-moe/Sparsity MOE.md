@@ -63,11 +63,12 @@ Gate is **not updated by Backprop** from MSE, instead from **RC Loss**
 
 2. If loss exceeds a **quantile q compared to other gates***(This is a **hyperparameter** that can be set, shd be worst 70%)* of loss  , output of selected Expert is deemed **incorrect**. Target is set to **0**.
 
-3. All other **unselected** Experts have Target set to N/E. Unselected means neither correct nor wrong. 1Target\>0  
+3. All other **unselected** Experts have Target set to N/E. (Unselected means neither correct nor wrong) 
    1. *N \= Number of incorrectly-chosen Experts*  
    2. *E \= Number of unselected Experts*
 
 4. Weight for each Expert is updated by **BCE** loss, of value against Target
+> (EG. Expert is selected, but wrong. BCE of 0.4 vs 0, where 0.4 is Gate's weight for expert at pixel.)
 
 5. This is done **independently** for each pixel of grid map.
 
