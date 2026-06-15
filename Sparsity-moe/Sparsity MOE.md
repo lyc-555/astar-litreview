@@ -11,7 +11,7 @@
 ![](image3.jpeg)
 
 
-\*\*\*
+<br />
 
 ## General Feature 1
 
@@ -21,7 +21,7 @@ Input a grid, output a grid of exact same size (Dense Regression)
 
 ![](image2.png)
 
-\*\*\*
+<br />
 
 ## General Feature 2
 
@@ -42,7 +42,7 @@ Input a grid, output a grid of exact same size (Dense Regression)
 
 4. → Activation Functions → Output
 
-\*\*\*
+<br />
 
 ## General Feature 3
 
@@ -52,7 +52,9 @@ Input a grid, output a grid of exact same size (Dense Regression)
 ## General Feature 4
 
 “We use a batch size of 64, the Adam optimizer with an initial learning rate of of 0.001, which we divide by a factor of 10 if the validation loss has not improved for two epochs to a minimum learning rate of 1e-6, and early stopping if the validation loss does not improve for five epochs”  
-\*\*\*  
+
+<br />
+
 ## Gating Mechanism 1
 
 Gate is **not updated by Backprop** from MSE, instead from **RC Loss**
@@ -69,7 +71,7 @@ Gate is **not updated by Backprop** from MSE, instead from **RC Loss**
 
 5. This is done **independently** for each pixel of grid map.
 
-\*\*\*
+<br />
 
 ## Gating Mechanism 2
 
@@ -77,14 +79,16 @@ Gate is **not updated by Backprop** from MSE, instead from **RC Loss**
 k=3 → *(0, .5, .4, .1, 0, 0, 0, 0\)* → All other 5 experts have weight \= 0  
    
 **What this means**: For each *downstream task (i.e. Predicting a certain property)*, only k Experts will ever be used. The rest are completely ignored  
-\*\*\*
+
+<br />
 
 ## Gating Mechanism 3
 
 Routing logic is **unaffected by inputs**. *“Tensor Routing”*
 
 Useful because geographic locations are fixed. Experts do not need to look at inputs to decide, its own location suffices.  
-\*\*\*
+
+<br />
 
 ## Expert Feature 1
 
@@ -95,7 +99,8 @@ Experts updated by MSE, through **Backprop**.
 2. Error divided by N, total no. of grid points. This averaged error is used for Backprop
 
 **Implication**: If **Expert chosen less, gradient update is of smaller magnitude**  
-\*\*\*
+
+<br />
 
 ## Expert Feature 2
 
@@ -108,7 +113,7 @@ Experts updated by MSE, through **Backprop**.
 * Instead the **Gate will do the job of not choosing that Expert.**
 
 
-\*\*\*
+<br />
 
 ## Application 1
 
