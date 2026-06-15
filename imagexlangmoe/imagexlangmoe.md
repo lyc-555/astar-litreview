@@ -37,7 +37,6 @@ Latent space is n-dimensions, shared between all modalities. This means that enc
 4. **K** points in latent space cloud are picked.  
    1. *qz\_x is the cloud*  
    2. *`rsample` grabs K points in cloud*  
-   3. `zs \= qz\_x.rsample(torch.Size(\[K\]))`
 
 5. All K Latent space points are fed into **Decoders of both MNIST & SVHN**. 2K images are outputted.  
    1. *We have **K** values for denominator, as there **K** points in latent space chosen, giving us **K** values for probability density function.*  
@@ -55,28 +54,50 @@ Latent space is n-dimensions, shared between all modalities. This means that enc
    1. *Calculating **1/K average** for each modality separately is what allows us to implement MMVAE loss, where latent clouds **arent mixed**, and have **equal weightage of 1/M**.*   
         
 8. This loss is used to update Encoder & Decoder of both MNIST & SVHN by **backprop**  
-   1. Loss type is chosen in [objectives.py](http://objectives.py). `def iwae` used here.   
+   1. Loss type is chosen in `objectives.py`. `def iwae` used here.   
         
 9. During *inference* time, not all modalities have to be present → **Min 1** needed for a latent space representation
 
 
-**ELBO Loss function:**  
+
+
+
+## **ELBO Loss function:**  
 ![](image3.png)
 
 
-**IWAE Loss (Upgrade)**
+
+
+
+
+
+
+
+## **IWAE Loss (Upgrade)**
 
 ![](image9.png)
 
 Each pass, K samples are taken from the blended cloud (Of all modalities), instead of 1\. K samples are fed individually into decoder. Losses are averaged.
 
-**Looser MMVAE Objective (Upgrade)**
+
+
+
+
+
+
+
+## **Looser MMVAE Objective (Upgrade)**
 
 ![](image10.png)
 
 * Instead of sampling from the expected of all latent clouds, **we don't mix the clouds**.  
 * Instead we sample K times from **each modality's cloud**, and give them **1/M** weightage in the loss.  
 * Ensures no modalities can *overpower* others. *“Weighing of gradients of samples from different modalities equally”*
+
+
+
+
+
 
 
 
