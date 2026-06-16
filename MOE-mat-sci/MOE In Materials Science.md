@@ -11,7 +11,7 @@
 
 | Unique Feature 1 | k sparse probability vector → Only k experts are activated. `KeepTopK` k=3 → *(0, .5, .4, .1, 0, 0, 0, 0\)* → All other 5 experts have weight \= 0   What this means: For each *downstream task (i.e. Predicting a certain property)*, only k Experts will ever be used. The rest are completely ignored For a different downstream task, different Experts are used  |
 | :---- | :---- |
-| **Unique Feature 2** | G(x,,k)=G(,k) Meaning: **Output of experts *do not* affect gating logic**   |
+| **Unique Feature 2** | **Output of experts *do not* affect gating logic**   |
 | **Unique Feature 3** | All model (Expert) outputs are **added**, *not concatenated.* MOE output dimensionality is **independent** of no. of Experts |
 | **Unique Feature 4** | Attempts to **concentrate Expert probabilities** in a handful of Experts.**lambda** is used as a hyperparameter here to scale loss._The term below is **<u>added to loss:</u>**_<br>$(1,0,0,0,0) \rightarrow P = 0$<br>$(0.9,0,0,0,1,0) \rightarrow P = (0.9^2 + 0.1^2 - 1)^2 = (0.82 - 1)^2$ |
 | **Unique Feature 5** | Experts are **pre-trained** in their own **data-abundant** tasks During MOE training, Expert model is kept constant, only last layer is **Fine-Tuned.**  A new **head** is attached, initialised with **random** weights, to “Adapt” expert to a downstream task.  *Because downstream task requires outputs of different dimensions/type, a new head is needed, heads cannot be carried over from pre-training*  |
