@@ -6,7 +6,13 @@
 
 → Cited by 76
 
+### Output by Model
+
 ![](image1.png)
+
+<br>
+
+### Model Architecture Diagram
 
 ![](image2.png)
 
@@ -20,7 +26,8 @@ Tries to predict **traffic speed of a road for next 12h**, using speed of past h
 
 ***How is Forward Pass carried out?***
 
-**> Memory**: **20 Learnable reference patterns** in a "latent space", representing various traffic conditions.
+Concept of **Memory** (Meta Node Bank)
+> **Memory**: **20 Learnable reference patterns** in a "latent space", representing various traffic conditions.
 
 > Used to determine weights for Gating logic
 
@@ -40,6 +47,8 @@ Tries to predict **traffic speed of a road for next 12h**, using speed of past h
 ## **General Feature 3**
 
 RTX 3090GPU
+
+<br>
 
 ## **Gating Feature 1**
 
@@ -67,11 +76,6 @@ Uses **Pseudo-Labels**. Lets use an example:
 
 **Result**: Gate makes worst Expert less & less likely to be chosen, as **weight assigned to non-worst Experts keep increasing.**
 
-**Expert** Updating logic:
-
-1. Compare Expert output against Ground truth
-2. Apply **backward pass**
-3. Weights inside Experts are updated
 
 ## **Gating Feature 3**
 
@@ -80,7 +84,20 @@ Above was oversimplification: There is no dedicated Gating Layer. **Gating is do
 - Pseudolabels used to update "Input Reformer", "Expert Reformer" & Memories themselves
 - Backprop gradient directly updates Memories too → Unrelated to Gating logic, as 1 Expert uses Memories to help with its own output
 
+<br>
+
 ## **Expert Feature 1**
+
+**Expert** Updating logic:
+
+1. Compare Expert output against Ground truth
+> Likely, this is done for all 3 Experts, NOT just the chosen one
+2. Apply **backward pass**
+3. Weights inside Experts are updated
+
+
+
+## **Expert Feature 2**
 
 **Warm-up** logic
 
