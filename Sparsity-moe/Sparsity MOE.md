@@ -61,7 +61,7 @@ Gate is **not updated by Backprop** from MSE, instead from **RC Loss**
 
 1. After main backward pass, each Gate looks at loss  reaching each selected Expert.
 
-2. If loss exceeds a **quantile q compared to other gates***(This is a **hyperparameter** that can be set, shd be worst 70%)* of loss  , output of selected Expert is deemed **incorrect**. Target is set to **0**.
+2. If loss exceeds a **quantile q compared to other gates** *(This is a **hyperparameter** that can be set, shd be worst 70%)* of loss, output of selected Expert is deemed **incorrect**. Target is set to **0**.
 
 3. All other **unselected** Experts have Target set to N/E. (Unselected means neither correct nor wrong) 
    1. *N \= Number of incorrectly-chosen Experts*  
@@ -118,7 +118,7 @@ Experts updated by MSE, through **Backprop**.
 
 ## Application 1
 
-→ Applied SMoE to ResNet-based **weather prediction** 
+> Applied SMoE to ResNet-based **weather prediction** 
 
 * **Replaced certain Convolution layers with SMoE layers**. *(IN both, Grid Size is kept through `padding=1, Stride=1`)*
 
