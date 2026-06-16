@@ -1,4 +1,4 @@
-# Mixture of weather experts
+# Mixture of Weather Experts
 
 **Code:** https://github.com/NVIDIA/physicsnemo/tree/main/examples/weather
 

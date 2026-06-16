@@ -1,4 +1,4 @@
-# **Spatial MOE**
+# **Spatial Mixture-of-Experts**
 
 **→** [https://arxiv.org/abs/2211.13491](https://arxiv.org/abs/2211.13491)  
 → [https://github.com/spcl/smoe](https://github.com/spcl/smoe)  

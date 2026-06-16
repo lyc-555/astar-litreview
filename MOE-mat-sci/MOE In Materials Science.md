@@ -1,4 +1,4 @@
-# **MOE In Materials Science**
+# **Towards overcoming data scarcity in materials science: unifying models and datasets with a mixture of experts framework**
 
 → [https://www.nature.com/articles/s41524-022-00929-x.pdf](https://www.nature.com/articles/s41524-022-00929-x.pdf)  
 → [https://github.com/rees-c/MoE](https://github.com/rees-c/MoE)  

@@ -1,4 +1,4 @@
-# **ImagexLangMOE**
+# **Variational Mixture-of-Experts Autoencoders for Multi-Modal Deep Generative Models**
 
 *https://arxiv.org/abs/1911.03393*
 *https://github.com/iffsid/mmvae*
