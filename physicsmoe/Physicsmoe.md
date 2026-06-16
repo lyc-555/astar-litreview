@@ -8,18 +8,18 @@
 
 ## Architecture
 
-![](image1.png){width=80%}
+<img src="image1.png" width="75%">
 
 <br>
 <br>
 
-![](image2.jpeg){width=80%}
+<img src="image2.jpeg" width="75%">
 
 
 ## Output 
 
 
-![](image4.png){width=80%}
+<img src="image4.png" width="75%">
 
 <br>
 
