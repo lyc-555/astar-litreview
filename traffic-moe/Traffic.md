@@ -41,7 +41,7 @@ Concept of **Memory** (Meta Node Bank)
 
 > **Cross-attention** between input & Memory.
 
-4. Self-attention output compared to Cross-attention output. Weight for each Expert determined by the **Cosine Similarity**.
+4. Self-attention output compared to Cross-attention output. Weight for each Expert determined by the **Cosine Similarity**. *(This may be what they meant by "Pairwise Distance?")*
 5. Top-1 Expert selected → FF layers → Output speed predictions
 
 ## **General Feature 3**
@@ -77,7 +77,7 @@ Uses **Pseudo-Labels**. Lets use an example:
 **Result**: Gate makes worst Expert less & less likely to be chosen, as **weight assigned to non-worst Experts keep increasing.**
 
 
-## **Gating Feature 3**
+## **Gating Feature 2b**
 
 Above was oversimplification: There is no dedicated Gating Layer. **Gating is done in Memory**.
 
