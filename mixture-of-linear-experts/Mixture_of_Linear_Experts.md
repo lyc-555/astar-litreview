@@ -53,7 +53,8 @@
 
 >> “...various temporal components of a datetime value are encoded into uniformly spaced values between `[−0.5,0.5]`”
 
-  
+<br>
+<br>  
   
 
 3. Converts input into moving average. *(****DLinear*** *only)* 
@@ -67,7 +68,8 @@
 
 > *There is no decomposition for* ***RLinear & RMLP*** *(Elaboration at bottom).*
 
-  
+<br>
+<br>
 
 4. `x_mark` is used to generate weights for each Expert, through 2 MLP layers. Reason is that timing will affect when each Expert is useful. `t_dim` experts.
       
@@ -84,7 +86,8 @@
 
 > *Authors tried* ***Weight dropout*** *as regularisation (0.2).*  
 
-  
+<br> 
+<br>
 
 5.  Y= W_trend X_trend + W_seasonal X_Seasonal
 
@@ -95,11 +98,12 @@ More rigorously,
 - `W_i, Y_i` = Weight of Experts and Product of Expert with `X` respectively.
 
 
-<img src="image5.png" width="90%">
+<img src="image6.png" width="90%">
 
 > All Experts are contained in a **single** **weight matrix**. The Experts are literally just a bunch of weights, *no bias.* 
 
-  
+ <br>
+ <br> 
   
 
 6.  Output = Predict `[Batch, pred_len, Channel]` Note that `Channel` remains, each input variable gets its own corresponding output.
@@ -123,7 +127,7 @@ More rigorously,
 
 <img src="image4.png" width="100%">
 
->> *Denorm is reverse of normalisation.* 
+>> ^^^*Denorm is reverse of normalisation.* 
 
 >> *RLinear has trainable parameters & Denorm uses* ***same parameters*** *as Norm* 
 
@@ -131,7 +135,7 @@ More rigorously,
 
 <img src="image5.png" width="100%">
 
-> ***RMLP*** *incorporates an additional 2-layer MLP to the base RLinear mode*
+> ^^^***RMLP*** *incorporates an additional 2-layer MLP to the base RLinear mode*
 
 >> *Performs better on* ***larger datasets***
 
