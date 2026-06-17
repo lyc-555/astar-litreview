@@ -9,7 +9,7 @@
 → 86 citations 
 
   
-<img src="image1.jpg" width="70%">
+<img src="image1.png" width="70%">
   
   
 
@@ -32,23 +32,23 @@
 
   
 
-\> seq\_len = 1 time-step
+> seq\_len = 1 time-step
 
-\> Batch = Batch-size by DataLoader. Without this, input would be \[seq\_len, Channel\]. There is only one datapoint (EG. Speed) at each seq\_len. We split up input by every Batch. 
+> Batch = Batch-size by DataLoader. Without this, input would be \[seq\_len, Channel\]. There is only one datapoint (EG. Speed) at each seq\_len. We split up input by every Batch. 
 
-\>\> *EG. We take* *Channel**=1,* *\[(1,2,3,4,5,6,7,8)\]* *→* *\[(1,2,3,4), (5,6,7,8)\]* *for* *Batch**=4*
+>> *EG. We take* *Channel**=1,* *\[(1,2,3,4,5,6,7,8)\]* *→* *\[(1,2,3,4), (5,6,7,8)\]* *for* *Batch**=4*
 
-\> Channel = Different variables, that are all forecasted together. 
+> Channel = Different variables, that are all forecasted together. 
 
-*\> \> EG. weather dataset's 21 meteorological variables - Rainfall/Temp/etc.*
+>> *EG. weather dataset's 21 meteorological variables - Rainfall/Temp/etc.*
 
   
 
-\> Calender feature/x\_mark = Features for each set of \[Batch, seq\_len\] , describing temporal conditions of every point of data. 
+> Calender feature/x\_mark = Features for each set of \[Batch, seq\_len\] , describing temporal conditions of every point of data. 
 
-\>\>  EG. *“Weekend/Weekday”, “Holiday”*, etc.
+>>  EG. *“Weekend/Weekday”, “Holiday”*, etc.
 
-\>\> “...various temporal components of a datetime value are encoded into uniformly spaced values between \[−0.5,0.5\]”
+>> “...various temporal components of a datetime value are encoded into uniformly spaced values between \[−0.5,0.5\]”
 
   
   
@@ -60,9 +60,9 @@
 
   
 
-*\> This decomposition captures time-dependent anomalies, that an overall trend does not predict. So 2 processes will deal with it better.* 
+> *This decomposition captures time-dependent anomalies, that an overall trend does not predict. So 2 processes will deal with it better.* 
 
-*\> There is no decomposition for* ***RLinear & RMLP*** *(Elaboration at bottom).*
+> *There is no decomposition for* ***RLinear & RMLP*** *(Elaboration at bottom).*
 
   
 
@@ -73,13 +73,13 @@
 
   
 
-*\> This means different batches, in the same channel have* ***different weights****.*
+> *This means different batches, in the same channel have* ***different weights****.*
 
-*\> This means weights in different channels are completely* ***different****.*
+> *This means weights in different channels are completely* ***different****.*
 
-*\> However, Experts are shared.*
+> *However, Experts are shared.*
 
-*\> Authors tried* ***Weight dropout*** *as regularisation (0.2).*  
+> *Authors tried* ***Weight dropout*** *as regularisation (0.2).*  
 
   
 
@@ -145,7 +145,7 @@
 
 <br>  
 
-*\> Meaning Expert* ***routing for different channels & batches are independent****, but the same* ***Experts are shared across channels and batches***  
+> *Meaning Expert* ***routing for different channels & batches are independent****, but the same* ***Experts are shared across channels and batches***  
   
 ## Expert Feature 1
 
@@ -162,7 +162,7 @@
 
   - Regarding usefulness of x\_mark / Calendar Feature: It is more **useful when input sequence length** **Batch** **decreases** (Tested against random inputs for Calendar Feature)
 
- <img src="image2.jpg" width="70%">
+ <img src="image2.png" width="70%">
 
 
 \> “... as the input sequence lengthens, the linear layer has more past data to consider, and some patterns in this data can hint at upcoming changes in the series. Hence, we predict that the effect of conditioning on start time should be less beneficial.”
@@ -171,4 +171,4 @@
 
   - Batch-size Tuning: Mid-range of batch sizes exhibits poor generalization, with low training loss but high test loss. Small or large are better. 
 
-<img src="image3.jpg" width="70%"
+<img src="image3.png" width="70%"
