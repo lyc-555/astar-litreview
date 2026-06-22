@@ -21,3 +21,5 @@
 
 * RF performance is lacklustre, R squared is negative. 
 
+> Amongst the 3 tested models, RF/SVM/GNN, RF performed the worst. However code for other models not available.
+
